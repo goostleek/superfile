@@ -1,6 +1,8 @@
 package variable
 
-import "github.com/adrg/xdg"
+import (
+	"github.com/adrg/xdg"
+)
 
 var HomeDir = xdg.Home
 var SuperFileMainDir = xdg.ConfigHome + "/superfile"
@@ -23,15 +25,24 @@ var (
 	ConfigFile       string = SuperFileMainDir + "/config.toml"
 	HotkeysFile      string = SuperFileMainDir + "/hotkeys.toml"
 	ToggleDotFile    string = SuperFileDataDir + "/toggleDotFile"
-	ToggleFooter    string = SuperFileDataDir + "/toggleFooter"
+	ToggleFooter     string = SuperFileDataDir + "/toggleFooter"
 	LogFile          string = SuperFileStateDir + "/superfile.log"
 	FixHotkeys       bool   = false
 	FixConfigFile    bool   = false
 	LastDir          string = ""
 	PrintLastDir     bool   = false
+
+
 )
 
 const (
+	// This will not break in windows. This is a relative path for Embed FS. It uses "/" only 
+	EmbedConfigDir string = "src/superfile_config"
+	EmbedConfigFile string = EmbedConfigDir + "/config.toml"
+	EmbedHotkeysFile string = EmbedConfigDir + "/hotkeys.toml"
+	EmbedThemeDir string = EmbedConfigDir + "/theme"
+	EmbedThemeCatppuccinFile string = EmbedThemeDir + "/catppuccin.toml"
+
 	TrashDirectory      string = "/Trash"
 	TrashDirectoryFiles string = "/Trash/files"
 	TrashDirectoryInfo  string = "/Trash/info"
